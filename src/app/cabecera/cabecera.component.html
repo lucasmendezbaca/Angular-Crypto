@@ -1,3 +1,19 @@
 <h1>Cabecera</h1>
 <input type="text" name="" id="" [(ngModel)]="nombreInput" (keyup)="filtrar()">
 
+<!-- Hacer un for por cada elemento de filterCoins -->
+<ul>
+    <li *ngFor="let coin of filterCoins">
+        {{coin.name}}
+        <button (click)="addFavorite(coin)">add</button>
+    </li>
+</ul>
+
+<!-- Hacer un for por cada elemento de favoriteCoins -->
+<ul>
+    <li *ngFor="let coin of favoriteCoins">
+        {{coin.name}}
+        <button (click)="deleteFavorite(coin)">remove</button>
+    </li>
+</ul>
+

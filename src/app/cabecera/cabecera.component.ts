@@ -10,6 +10,7 @@ export class CabeceraComponent {
   nombreInput = '';
   allCoins = new Array();
   filterCoins = new Array();
+  favoriteCoins = new Array();
 
   constructor(private http: HttpClient) {
 
@@ -24,11 +25,24 @@ export class CabeceraComponent {
       .subscribe((data:any) => {
         this.allCoins = data;
         console.log(data);
-        console.log(data[0].name);
+        // console.log(data[0].name);
       });
   }
 
   filtrar() {
-    this.filterCoins = this.allCoins.filter(coin => coin.name.toLowerCase().includes(this.nombreInput.toLowerCase()));
+    if(this.nombreInput.length > 2) {
+      this.filterCoins = this.allCoins.filter(coin => coin.name.toLowerCase().startsWith(this.nombreInput.toLowerCase()));
+    } else {
+      this.filterCoins = new Array();
+    }
+  }
+
+  addFavorite(coin:any) {
+    this.favoriteCoins.push(coin);
+  }
+
+  deleteFavorite(coin:any) {
+    const index = this.favoriteCoins.indexOf(coin);
+    this.favoriteCoins.splice(index, 1);
   }
 }
