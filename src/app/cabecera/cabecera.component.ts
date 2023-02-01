@@ -25,7 +25,6 @@ export class CabeceraComponent {
       .subscribe((data:any) => {
         this.allCoins = data;
         console.log(data);
-        // console.log(data[0].name);
       });
   }
 

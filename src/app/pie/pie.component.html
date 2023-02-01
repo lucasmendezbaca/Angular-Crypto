@@ -1,1 +1,5 @@
-<p>pie works!</p>
+<p>Datos de la base de datos</p>
+
+<ul>
+  <li *ngFor="let dato of datosBD | async">{{dato.nombre}}</li>
+</ul>

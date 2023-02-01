@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "prueba-angular-f7aa6": {
+      "hosting": {
+        "Angular-Crypto": [
+          "prueba-angular-f7aa6"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "prueba-angular-f7aa6"
+  }
+}
